@@ -5,7 +5,8 @@ import {
   RestExplorerComponent,
 } from '@loopback/rest-explorer';
 import {RepositoryMixin} from '@loopback/repository';
-import {RestApplication} from '@loopback/rest';
+import { RestApplication, RestServer } from '@loopback/rest';
+//import { CORSRestComponent } from '@loopback/rest-cors';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
@@ -15,6 +16,7 @@ export {ApplicationConfig};
 export class ForeingAplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
 ) {
+  [x: string]: any;
   constructor(options: ApplicationConfig = {}) {
     super(options);
 

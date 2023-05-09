@@ -3,6 +3,7 @@ import {ApplicationConfig, ForeingAplication} from './application';
 export * from './application';
 
 export async function main(options: ApplicationConfig = {}) {
+  const cors = require('cors');
   const app = new ForeingAplication(options);
   await app.boot();
   await app.start();
